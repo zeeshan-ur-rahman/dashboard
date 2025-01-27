@@ -1,11 +1,12 @@
 import React from 'react';
 import {Card, Row, Col, Typography, Collapse} from 'antd';
 import CustomerDetails from "./CustomerDetails.jsx";
+import Index from "./Index.jsx";
 
 const { Text } = Typography;
 const { Panel } = Collapse;
 
-const siteSurvey = () => {
+const SiteSurvey = () => {
     const defaultValues = {
         customerName: "John Doe",
         phoneNumber: "123-456-7890",
@@ -62,7 +63,7 @@ const siteSurvey = () => {
         </Card>
 
 
-                    <CustomerDetails/>
+                    <Index/>
 
 
 
@@ -71,4 +72,4 @@ const siteSurvey = () => {
     );
 }
 
-export default siteSurvey;
+export default SiteSurvey;

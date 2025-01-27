@@ -30,7 +30,7 @@ const ChatStatus = () => {
                     {/* Status Column */}
                     <Col xs={24} sm={24} md={24} lg={24}>
                         <Form.Item label="Status" name="status">
-                            <Select placeholder="Select Status">
+                            <Select  placeholder="Select Status">
                                 <Option value="active">Active</Option>
                                 <Option value="onHold">On Hold</Option>
                             </Select>

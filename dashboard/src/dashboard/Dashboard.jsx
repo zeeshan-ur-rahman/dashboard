@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Steps, Card, Space, Typography, Button, Grid } from "antd";
-import { EditOutlined, CopyOutlined, CloseOutlined } from "@ant-design/icons";
-import CustomerDetails from "./CustomerDetails.jsx";
+import {  CloseOutlined } from "@ant-design/icons";
 import SiteSurvey from "./SiteSurvey.jsx";
+import { IoCopyOutline ,IoCreateOutline ,IoCheckmarkSharp } from "react-icons/io5";
+import Index from "./Index.jsx";
+
 
 const { Step } = Steps;
 const { Title, Text } = Typography;
@@ -13,7 +15,7 @@ const Dashboard = () => {
     const screens = useBreakpoint();
 
     const steps = [
-        { title: "Job Review", content: <CustomerDetails /> },
+        { title: "Job Review", content: <Index /> },
         { title: "Site Survey", content: <SiteSurvey/> },
         { title: "Design", content: <div>Design Content</div> },
         { title: "Permit", content: <div>Permit Content</div> },
@@ -38,8 +40,8 @@ const Dashboard = () => {
                         <div style={{ display: "flex", alignItems: "center" }}>
                             <Title level={4} style={{ margin: 0 }}>Hanley, Brad - 2237</Title>
                             <Space style={{ marginLeft: 10 }}>
-                                <CopyOutlined style={{ fontSize: 18, cursor: "pointer" }} />
-                                <EditOutlined style={{ fontSize: 18, cursor: "pointer" }} />
+                                <IoCreateOutline  style={{ fontSize: 18, cursor: "pointer" }} />
+                                <IoCopyOutline  style={{ fontSize: 18, cursor: "pointer" }} />
                             </Space>
                         </div>
 
@@ -47,16 +49,17 @@ const Dashboard = () => {
                         <div style={{ display: "flex", alignItems: "center", marginTop: 8 }}>
                             <Text style={{ margin: 0 }}>13 Wadleigh Point Road, Kingston, NH 03848</Text>
                             <Space style={{ marginLeft: 10 }}>
-                                <CopyOutlined style={{ fontSize: 16, cursor: "pointer" }} />
-                                <EditOutlined style={{ fontSize: 16, cursor: "pointer" }} />
+                                <IoCreateOutline  style={{ fontSize: 18, cursor: "pointer" }} />
+                                <IoCopyOutline  style={{ fontSize: 18, cursor: "pointer" }} />
                             </Space>
                         </div>
                     </div>
 
                     {/* Buttons */}
                     <Space>
-                        <Button type="default" icon={<CloseOutlined />} />
-                        <Button type="primary">Save</Button>
+                        <Button size="large" icon={<IoCheckmarkSharp />}
+                                type="primary">Save</Button>
+                        <Button size="large" type="default" icon={<CloseOutlined />} />
                     </Space>
                 </div>
 

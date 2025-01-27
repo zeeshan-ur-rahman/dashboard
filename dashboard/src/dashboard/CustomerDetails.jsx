@@ -1,37 +1,35 @@
 import React, { useState } from "react";
 import { Card, Input, Form, Row, Col, Select, Button, Space, Divider, Collapse } from "antd";
-import { PlusOutlined, CloseOutlined } from "@ant-design/icons";
 import JobsDetails from "./JobsDetails.jsx";
 import ChatStatus from "./ChatStatus.jsx";
 import Note from "./Note.jsx";
 import FinanceDetails from "./FinanceDetails.jsx";
 import SalesRep from "./SalesRep.jsx";
 import JobReview from "./JobReview.jsx";
+import { IoCloseSharp  ,} from "react-icons/io5";
+import { FiPlusCircle } from "react-icons/fi";
+
+
 
 const { Option } = Select;
 const { Panel } = Collapse;
 
 const CustomerDetails = () => {
-    const [coCustomers, setCoCustomers] = useState([{ id: Date.now() }]); // Manage dynamic Co Customer fields
+    const [coCustomers, setCoCustomers] = useState([{ id: Date.now() }]);
 
     const handleAddCoCustomer = () => {
         setCoCustomers([...coCustomers, { id: Date.now() }]); // Add new co-customer field
     };
 
     const handleRemoveCoCustomer = (id) => {
-        setCoCustomers(coCustomers.filter((customer) => customer.id !== id)); // Remove co-customer field
+        setCoCustomers(coCustomers.filter((customer) => customer.id !== id));
     };
 
     return (
         <>
             <Row gutter={[16, 16]}>
-                <Col xs={24} sm={24} md={16}>
-                    <Collapse
-                        defaultActiveKey={["customer_details","job_details"]}
-                        style={{ marginTop: "20px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}
-                        expandIconPosition="end"
-                    >
-                        <Panel header="Customer Details" key="customer_details">
+                <Col xs={24} sm={24} md={24}>
+
                             <Form layout="vertical">
                                 <Row gutter={[16, 16]}>
                                     {/* First Name Input */}
@@ -175,17 +173,16 @@ const CustomerDetails = () => {
                                                     {coCustomers.length > 1 && (
                                                         <Button
                                                             type="text"
-                                                            icon={<CloseOutlined />}
+                                                            icon={<IoCloseSharp  style={{fontSize:"20px"}} />
+                                                            }
                                                             onClick={() => handleRemoveCoCustomer(coCustomer.id)}
-                                                            style={{ color: "red" }}
                                                         />
                                                     )}
 
                                                     <Button
                                                         type="text"
-                                                        icon={<PlusOutlined />}
+                                                        icon={<FiPlusCircle style={{fontSize:"20px"}} />}
                                                         onClick={handleAddCoCustomer}
-                                                        style={{ color: "green" }}
                                                     />
                                                 </Col>
                                             </Row>
@@ -193,33 +190,10 @@ const CustomerDetails = () => {
                                     </Col>
                                 </Row>
                             </Form>
-                        </Panel>
 
-
-                        <Panel header="Job Details" key="job_details">
-                            <JobsDetails />
-                        </Panel>
-
-                        <Panel header="Finance Details" key="finance_details">
-                            <FinanceDetails />
-                        </Panel>
-
-                        <Panel header="Sales Rep Details" key="sales-rep">
-                            <SalesRep />
-                        </Panel>
-
-
-                        <Panel header="Job Review Task" key="job_review" >
-                            <JobReview />
-                        </Panel>
-
-                    </Collapse>
                 </Col>
 
-                <Col xs={24} sm={24} md={8}>
-                    <ChatStatus />
-                    <Note />
-                </Col>
+
             </Row>
 
 
