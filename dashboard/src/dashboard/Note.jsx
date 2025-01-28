@@ -1,4 +1,4 @@
-import {Input, Button, Form, Divider, Tag, Select, Card} from 'antd';
+import { Input, Button, Form, Divider, Tag, Select, Card } from 'antd';
 import { FilterOutlined } from '@ant-design/icons';
 import React, { useState } from 'react';
 import { IoAdd } from "react-icons/io5";
@@ -7,6 +7,7 @@ const { Option } = Select;
 
 const Note = () => {
     const [notes, setNotes] = useState([]);
+    const [form] = Form.useForm();
 
     const addNewNote = (values) => {
         const newNote = {
@@ -14,6 +15,8 @@ const Note = () => {
             date: new Date().toLocaleString(),
         };
         setNotes([...notes, newNote]);
+
+        form.resetFields();
     };
 
     return (
@@ -37,13 +40,12 @@ const Note = () => {
             </div>
 
             <Form
+                form={form}  // Bind the form instance
                 layout="vertical"
                 onFinish={(values) => {
                     addNewNote(values);
                 }}
             >
-
-
                 {/* Note Text Area */}
                 <Form.Item
                     name="note"
@@ -51,8 +53,6 @@ const Note = () => {
                 >
                     <Input.TextArea placeholder="Enter your note here" rows={3} />
                 </Form.Item>
-
-
 
                 {/* Add Note Button */}
                 <Form.Item>
@@ -92,7 +92,6 @@ const Note = () => {
                                 <span style={{ fontWeight: 'bold' }}>
                                     {note.name} - {note.date}
                                 </span>
-
                             </div>
                             <Divider />
                             <p>{note.text}</p>
