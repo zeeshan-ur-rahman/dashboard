@@ -1,21 +1,26 @@
-import {Input, Button, Form, Divider} from 'antd';
+import {Input, Button, Form, Divider, Tag, Select, Card} from 'antd';
 import { FilterOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { IoAdd } from "react-icons/io5";
+
+const { Option } = Select;
 
 const Note = () => {
     const [notes, setNotes] = useState([]);
 
     const addNewNote = (values) => {
-        setNotes([...notes, values.note]);
+        const newNote = {
+            text: values.note,
+            date: new Date().toLocaleString(),
+        };
+        setNotes([...notes, newNote]);
     };
 
     return (
-        <div
+        <Card
             style={{
-                padding: '20px',
                 border: '1px solid #d9d9d9',
                 borderRadius: '8px',
-                maxWidth: '500px',
                 marginTop: '20px',
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
             }}
@@ -27,7 +32,7 @@ const Note = () => {
                     alignItems: 'center',
                 }}
             >
-                <h4>Note</h4>
+                <h4>Notes</h4>
                 <FilterOutlined style={{ fontSize: '20px', cursor: 'pointer' }} />
             </div>
 
@@ -37,18 +42,26 @@ const Note = () => {
                     addNewNote(values);
                 }}
             >
-                {/* Text Area */}
+
+
+                {/* Note Text Area */}
                 <Form.Item
-                    label="Note"
                     name="note"
                     rules={[{ required: true, message: 'Please enter your note!' }]}
                 >
-                    <Input.TextArea placeholder="Enter your note here" rows={4} />
+                    <Input.TextArea placeholder="Enter your note here" rows={3} />
                 </Form.Item>
+
+
 
                 {/* Add Note Button */}
                 <Form.Item>
-                    <Button type="primary" htmlType="submit" block>
+                    <Button
+                        type="primary"
+                        htmlType="submit"
+                        block
+                        icon={<IoAdd style={{ fontSize: "20px" }} />}
+                    >
                         Add Note
                     </Button>
                 </Form.Item>
@@ -59,14 +72,35 @@ const Note = () => {
                 <h4>Added Notes:</h4>
                 <div>
                     {notes.map((note, index) => (
-                        <div  key={index} style={{ marginBottom: '8px',  }}>
-                            {note}
-                            <Divider/>
+                        <div
+                            key={index}
+                            style={{
+                                padding: '10px',
+                                border: '1px solid #d9d9d9',
+                                borderRadius: '8px',
+                                marginBottom: '10px',
+                                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                            }}
+                        >
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <span style={{ fontWeight: 'bold' }}>
+                                    {note.name} - {note.date}
+                                </span>
+
+                            </div>
+                            <Divider />
+                            <p>{note.text}</p>
                         </div>
                     ))}
                 </div>
             </div>
-        </div>
+        </Card>
     );
 };
 

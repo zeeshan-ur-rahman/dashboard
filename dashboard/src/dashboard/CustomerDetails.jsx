@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { Card, Input, Form, Row, Col, Select, Button, Space, Divider, Collapse } from "antd";
-import JobsDetails from "./JobsDetails.jsx";
-import ChatStatus from "./ChatStatus.jsx";
-import Note from "./Note.jsx";
-import FinanceDetails from "./FinanceDetails.jsx";
-import SalesRep from "./SalesRep.jsx";
-import JobReview from "./JobReview.jsx";
+
 import { IoCloseSharp  ,} from "react-icons/io5";
 import { FiPlusCircle } from "react-icons/fi";
 

@@ -16,7 +16,7 @@ const Index = () => {
             <Row gutter={[16, 16]}>
                 <Col xs={24} sm={24} md={16}>
                     <Collapse
-                        defaultActiveKey={["customer_details", "job_details"]}
+                        defaultActiveKey={["customer_details"]}
                         style={{
                             marginTop: "20px",
                             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
@@ -31,7 +31,7 @@ const Index = () => {
 
 
                         <Collapse
-                            defaultActiveKey={["customer_details", "job_details"]}
+                            defaultActiveKey={[ "job_details"]}
                             style={{
                                 marginTop: "20px",
                                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
@@ -45,7 +45,7 @@ const Index = () => {
                         </Collapse>
 
                     <Collapse
-                        defaultActiveKey={["customer_details", "job_details"]}
+                        defaultActiveKey={["finance_details"]}
                         style={{
                             marginTop: "20px",
                             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
