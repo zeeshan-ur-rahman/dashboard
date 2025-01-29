@@ -93,14 +93,33 @@ const Dashboard = () => {
                     }}
                 >
                     {steps.map((step, index) => {
+                        let status = "wait";
+
+                        if (index < currentStep) {
+                            status = "finish";
+                        } else if (index === currentStep) {
+                            status = "process";
+                        }
+
                         return (
                             <Step
                                 key={index}
                                 title={<FormattedStepTitle title={step.title} />}
+                                status={status}
+                                icon={
+                                    index === currentStep ? (
+                                        <IoCheckmarkCircleSharp style={{ color: "orange" }} />
+                                    ) : index < currentStep ? (
+                                        <IoCheckmarkCircleSharp style={{ color: "green" }} />
+                                    ) : (
+                                        <IoCheckmarkCircleSharp style={{ color: "gray" }} />
+                                    )
+                                }
                             />
                         );
                     })}
                 </Steps>
+
 
                 <div style={{ marginTop: 20 }}>{steps[currentStep].content}</div>
             </Card>
