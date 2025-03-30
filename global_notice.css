@@ -1,0 +1,26 @@
+/* Ant Design ke Radio Button ke default border & separator hatane ke liye */
+.custom-radio-group .ant-radio-button-wrapper {
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.custom-radio-group .ant-radio-button-wrapper::before {
+    display: none !important;
+}
+
+
+.custom-radio-group .ant-radio-button-wrapper:hover,
+.custom-radio-group .ant-radio-button-wrapper-checked {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+.custom-radio-group .custom-radio-btn {
+    gap: 9px !important;
+}
+
+
+
