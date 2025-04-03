@@ -29,7 +29,7 @@ const GlobalNotice = () => {
             <Row gutter={16} style={{ marginBottom: 16, alignItems: "center" ,width:"513px" ,height:"99px" }}>
                 <Col span={12}>
                     <label style={{ display: "block", marginBottom: 4 }}>Notice Bar Visibility</label>
-                    <Switch checked={isVisible} onChange={setIsVisible} />
+                    <Switch checked={isVisible} onChange={setIsVisible}  size="large" unCheckedChildren="Hidden"  />
                 </Col>
                 <Col span={12}>
                     <label style={{ display: "block", marginBottom: 4 }}>Background Color</label>

@@ -3,23 +3,44 @@ import { Button, Card } from "antd";
 import "antd/dist/reset.css";
 
 const colors = [
-    ["#d9d9d9", "#bfbfbf", "#8c8c8c", "#595959", "#262626"],
-    ["#ffccc7", "#ffa39e", "#ff7875", "#ff4d4f", "#f5222d"],
-    ["#ffd591", "#ffc069", "#ffa940", "#fa8c16", "#d46b08"],
-    ["#fffb8f", "#fff566", "#ffec3d", "#fadb14", "#d4b106"],
-    ["#b7eb8f", "#95de64", "#73d13d", "#52c41a", "#389e0d"],
-    ["#87e8de", "#5cdbd3", "#36cfc9", "#13c2c2", "#08979c"],
-    ["#91d5ff", "#69c0ff", "#40a9ff", "#1890ff", "#096dd9"],
-    ["#adc6ff", "#85a5ff", "#597ef7", "#2f54eb", "#1d39c4"],
+    ["#9BA1B6", "#667388", "#4C5468", "#9EA3AE", "#6B7380","#4A5561"],
+    ["#A2A3A8", "#5E7BF3", "#61B17D", "#E3802C", "#677388","#609CE4"],
+    ["#A2A3A8", "#5E7BF3", "#61B17D", "#E3802C", "#677388","#609CE4"],
+    ["#E89E47", "#5E7BF3", "#61B17D", "#E3802C", "#677388","#609CE4"],
+    ["#EFCC3A", "#5E7BF3", "#61B17D", "#E3802C", "#677388","#609CE4"],
+    ["#86D287", "#5E7BF3", "#61B17D", "#E3802C", "#677388","#609CE4"],
+    ["#7AC8BE", "#5E7BF3", "#61B17D", "#E3802C", "#677388","#609CE4"],
+    ["#154D68", "#5E7BF3", "#61B17D", "#E3802C", "#677388","#609CE4"],
+    ["#154D68", "#5E7BF3", "#61B17D", "#E3802C", "#677388","#609CE4"],
+    ["#154D68", "#5E7BF3", "#61B17D", "#E3802C", "#677388","#609CE4"],
+    ["#154D68", "#5E7BF3", "#61B17D", "#E3802C", "#677388","#609CE4"],
 ];
 
 const UiSettings = () => {
     const [selectedColor, setSelectedColor] = useState(null);
 
     return (
-        <Card title="Primary colors" style={{ width: "100%", padding: 24 }}>
+        <Card 
+            title="Primary colors" 
+            headStyle={{ backgroundColor: "#F5F5F5", borderBottom: "1px solid #CACACA" }}
+            style={{ 
+                width: "100%", 
+                maxWidth: 1375, 
+                margin: "0px",
+                padding: "0px",
+                borderRadius: "5px",
+                border: "1px solid #ddd"
+            }}
+        >
             <div style={{ marginBottom: 16, fontWeight: "bold" }}>Background Color</div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 24px)", gap: 8, justifyContent: "start" }}>
+            
+            {/* Color Grid */}
+            <div style={{ 
+                display: "grid", 
+                gridTemplateColumns: "repeat(6, 24px)", 
+                gap: 8, 
+                justifyContent: "start",
+            }}>
                 {colors.flat().map((color, index) => (
                     <div
                         key={index}
@@ -35,7 +56,14 @@ const UiSettings = () => {
                     />
                 ))}
             </div>
-            <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 16 }}>
+
+            {/* Save Button with Border */}
+            <div style={{ 
+                display: "flex", 
+                justifyContent: "flex-end", 
+                marginTop: 20,
+                padding: "8px",
+            }}>
                 <Button type="primary">Save</Button>
             </div>
         </Card>

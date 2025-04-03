@@ -24,16 +24,16 @@ const AppSetting = () => {
     ];
 
     return (
-        <Row gutter={16} style={{ minHeight: "100vh", background: "#ffff", padding: "20px" }}>
+        <Row style={{ minHeight: "100vh", background: "#ffff"}}>
             {/* Sidebar */}
-            <Col style={{ width: 220, background: "#ffffff", padding: "16px", borderRadius: "8px", boxShadow: "0px 2px 8px rgba(0,0,0,0.1)" }}>
+            <Col style={{ width: 220, background: "#ffffff", padding: "16px", border:"1px solid #CACACA"}}>
                 <Title level={5} style={{ textAlign: "center" }}>Spark CRM</Title>
             </Col>
 
             {/* Main Content */}
             <Col flex="auto">
                 <ManageSetting />
-                <Card style={{ width: "100%", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", background: "#faf9f9" }}>
+                <Card style={{ width: "100%", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", background: "#faf9f9", }}>
                     <Tabs tabBarStyle={{ borderBottom: "1px solid #d9d9d9",   color: "#ACABAB" }}  defaultActiveKey="1" items={items} onChange={onChange} />
                 </Card>
             </Col>

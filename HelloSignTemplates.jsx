@@ -27,6 +27,7 @@ const HelloSignTemplates = () => {
             title: 'State',
             dataIndex: 'state',
             key: 'state',
+            render: (text) => text ? text : '-' 
         },
         {
             title: 'Actions',
@@ -45,14 +46,16 @@ const HelloSignTemplates = () => {
             ),
         },
     ];
+    
 
     return (
-        <div style={{ background: '#fff', boxShadow: '0 1px 3px rgba(0,0,0,0.1)'}}>
+        <div style={{ background: '#fff', border:"1px solid #CACACA" }}>
             <div style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 padding: '10px',
                 backgroundColor: '#f5f5f5',
+                borderBottom:"1px solid #CACACA"
             }}>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <Input placeholder="Search..." style={{width: '341px'}}/>
@@ -76,7 +79,7 @@ const HelloSignTemplates = () => {
 
             />
 
-            <div style={{display: 'flex', justifyContent: 'end', marginTop: '16px', alignItems: 'center'}}>
+            <div style={{display: 'flex', justifyContent: 'end', margin: '16px', alignItems: 'center'}}>
                 <span style={{fontSize: '14px', color: "#3E3D3D"}}>1-11 of 11 item</span>
                 <Pagination
                     showSizeChanger
