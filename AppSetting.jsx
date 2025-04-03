@@ -45,7 +45,7 @@ const SettingsForm = () => {
     const inputStyle = { border: "1px solid #d9d9d9", borderRadius: "4px" };
 
     return (
-        <Card style={{width:"100%"}}>
+        <Card style={{width:"100%",border:"1px solid #CACACA"}}>
             <Form layout="vertical ">
                 <Row gutter={[16,8]}>
                     <Col span={12}>

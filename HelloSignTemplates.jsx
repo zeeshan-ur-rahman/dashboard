@@ -1,6 +1,7 @@
 import { Table, Input, Button, Switch, Space, Pagination } from 'antd';
-import { ReloadOutlined, SettingOutlined, CopyOutlined } from '@ant-design/icons';
+import { ReloadOutlined, SettingOutlined } from '@ant-design/icons';
 import "./hellosign.css"
+import ArrowRight from "../assets/file-arrow-right.svg"
 
 const HelloSignTemplates = () => {
     const data = [
@@ -22,16 +23,21 @@ const HelloSignTemplates = () => {
             title: 'Title',
             dataIndex: 'title',
             key: 'title',
+            width:400,
+
         },
         {
             title: 'State',
             dataIndex: 'state',
             key: 'state',
+            width:300,
             render: (text) => text ? text : '-' 
         },
         {
             title: 'Actions',
             key: 'actions',
+            width:200,
+
             render: (_, record) => (
                 <Space>
                     <Button type="primary" size="small">
@@ -62,9 +68,9 @@ const HelloSignTemplates = () => {
                 </div>
                 <Space>
                     <Switch size="large" checkedChildren="Show Deleted" unCheckedChildren="Show Deleted"/>
-                    <Button type="text" icon={<CopyOutlined/>} size="small"/>
-                    <Button type="text" icon={<ReloadOutlined/>} size="small"/>
-                    <Button type="text" icon={<SettingOutlined/>} size="small" title="Settings"/>
+                    <Button type="text" size="small"><img src={ArrowRight} /></Button>
+                    <Button type="text" icon={<ReloadOutlined style={{fontWeight:"bold"}}/>} size="small"/>
+                    <Button type="text" icon={<SettingOutlined />} size="small" title="Settings"/>
                 </Space>
             </div>
 

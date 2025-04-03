@@ -1,18 +1,27 @@
-import { Space, Button, Breadcrumb, Typography } from "antd";
-import { SettingOutlined, FileTextOutlined, BellOutlined, UnorderedListOutlined } from "@ant-design/icons";
+import { Space, Button, Breadcrumb, Typography, Badge } from "antd";
 import superAdminImage from "../assets/admin_logo.jpeg"
+import TaxonomyICon from "../assets/tax.svg"
+import CustomIcon from "../assets/custom.svg"
+import ActivityIcon from "../assets/activity.svg"
+import { BellOutlined,SettingOutlined } from "@ant-design/icons";
+
 
 const { Title } = Typography;
 
 const ManageSetting = () => {
     return (
         <>
-            <Space size="middle" style={{ display: "flex", justifyContent: "flex-end", padding: "0px 16px",borderBottom:"1px solid #ddd",width:"100%",height:"56px" }}>
-                <Button type="text" icon={<UnorderedListOutlined />}>Taxonomies</Button>
-                <Button type="text" icon={<FileTextOutlined />}>Custom Fields</Button>
+ 
+
+
+            <Space size="middle" style={{ display: "flex", justifyContent: "flex-end", padding: "0px 16px",borderBottom:"1px solid #CACACA",width:"100%",height:"56px" }}>
+                <Button type="text" ><img src={TaxonomyICon} alt="" />Taxonomies</Button>
+                <Button type="text" ><img src={CustomIcon} alt="" />Custom Fields</Button>
                 <Button type="text" icon={<SettingOutlined />}>Settings</Button>
-                <Button type="text" icon={<UnorderedListOutlined />}>Activity Logs</Button>
-                <Button type="text" icon={<BellOutlined />} />
+                <Button type="text"> <img src={ActivityIcon} alt="" />Activity Logs</Button>
+                <Badge count={83} size="small" >
+                <Button type="text" icon={<BellOutlined  style={{fontSize:"20px"}}/>} />
+                </Badge>
                 <Button type="text">
                     <img 
                         src={superAdminImage} 
@@ -36,11 +45,9 @@ const ManageSetting = () => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    background: "#fff",
-                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-                    borderBottom: "1px solid #ddd",
-                    borderLeft: "1px solid #ddd",
-                    borderTop: "1px solid #ddd",
+                    borderBottom: "1px solid #CACACA",
+                    borderLeft: "1px solid CACACA",
+                    color:"#FFFFFF"
                 }}
             >
                 <Title level={5} style={{ margin: "0 0 8px 0", textAlign: "left" }}>Manage Settings</Title>

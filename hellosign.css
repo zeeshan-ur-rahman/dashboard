@@ -20,5 +20,10 @@
     text-align: start;
 }
 
+.custom-stages-table .ant-table-thead .ant-table-cell::before {
+    display: none !important;
+}
+
+
 
 
