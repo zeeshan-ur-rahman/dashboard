@@ -14,7 +14,7 @@ const GlobalNotice = () => {
     };
 
     return (
-        <Card title="Global Notice" headStyle={{ backgroundColor: "#F5F5F5",border:"1px solid #CACACA" }}>
+        <Card style={{border:"1px solid #CACACA"}} title="Global Notice" headStyle={{ backgroundColor: "#F5F5F5",borderBottom:"1px solid #CACACA" }}>
             <div style={{ marginBottom: 16 }}>
                 <label style={{ display: "block", marginBottom: 8 }}>Notice Text</label>
                 <Input.TextArea

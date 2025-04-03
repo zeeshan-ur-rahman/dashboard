@@ -30,17 +30,17 @@ const Stages = () => {
     };
 
     return (
-        <Card title="Stages Setting"  headStyle={{ backgroundColor: "#F5F5F5",border:"1px solid #CACACA" }}>
+        <Card title="Stages Setting" style={{border:"1px solid #CACACA"}} headStyle={{ backgroundColor: "#F5F5F5",borderBottom:"1px solid #CACACA"}}>
             {stages.map((stage, index) => (
                 <div key={stage.key} style={{
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    padding: "6px 0"
+                    padding: "6px 0px",
                 }}>
 
                     {/* Stage + Status (No Extra Space) */}
-                    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px", }}>
                         <Text style={{ width: "250px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                             {index + 1}. {stage.name}
                         </Text>
@@ -57,7 +57,7 @@ const Stages = () => {
                     </div>
 
                     {/* Switch & Edit Icon */}
-                    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px", }}>
                         <Switch style={{ width: "48px", height: "16px" }} size="small" onChange={() => handleToggle(stage.key)} checked={stage.enabled} />
                         <EditOutlined />
                     </div>
